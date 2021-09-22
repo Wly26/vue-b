@@ -7,25 +7,23 @@
     .active {
       color: red;
     }
-
     .line {
       text-decoration: underline;
     }
-
     .large {
       font-size: 50px;
     }
   </style>
 </head>
 <body>
-<!-- 很少用到，除非数组本身-->
+<!-- 很少用到，除非数组名本身，也是后台数据库动态传入的。-->
 <div id="app">
   <h2 :class="['active', 'line']">今天天气不错</h2>
   <h2 class="large" :class="['active', 'line']">今天天气不错</h2>
   <h2 class="large" :class="getClasses()">今天天气不错</h2>
 </div>
 
-<script src="../js/vue.js"></script>
+<script src="./js/vue.js"></script>
 <script>
     let vm = new Vue({
       el: '#app',
