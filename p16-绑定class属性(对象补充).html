@@ -10,17 +10,17 @@
     .active {
       color: red;
     }
-    .large {
-      font-size: 40px;
-    }
   </style>
 </head>
-<body>
 
+<body>
 <div id="app">
+  <!-- 布尔值绑定 -->
   <h2 :class="{line: isLine, active: isActive}">你好啊,王红元</h2>
-  <h2 class="large" :class="{line: isLine, active: isActive}">你好啊,王红元</h2>
-  <h2 class="large" :class="getClasses()">你好啊,王红元</h2>
+  <!-- 方法绑定 -->
+  <h2 :class="getClasses()">你好啊,王红元</h2>
+  <!-- 计算属性绑定 -->
+  <h2 :class="getClass">你好啊</h2>
 </div>
 
 <script src="./js/vue.js"></script>
@@ -34,6 +34,13 @@
     methods: {
     	getClasses() {
     		return {line: this.isLine, active: this.isActive}
+      }
+    },
+    computed: {
+      getClass: {
+        get() {
+          return {line: this.isLine, active: this.isActive}
+        }
       }
     }
   })
