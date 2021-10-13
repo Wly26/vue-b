@@ -7,6 +7,9 @@
 <body>
 
   <div id="app">
+    <!-- cpnClick方法，调用的是自定义组件select传入的index形参，是已经传入的，并不需要再次定义形参，
+      @select="cpnClick"，相当于@select="cpnClick(index)"
+    -->
     <cpn @select="cpnClick"></cpn>
     <h2>{{contents[currentIndex]}}</h2>
   </div>
