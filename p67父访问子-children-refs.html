@@ -29,7 +29,7 @@
     },
     methods: {
       btnClick() {
-        // 1.$children
+        // 1.$children 访问所有组件的内容，用的比较少。
         // console.log(this.$children);
         // for (let c of this.$children) {
         //   console.log(c.name);
@@ -37,7 +37,9 @@
         // }
         // console.log(this.$children[3].name);
 
-        // 2.$refs => 对象类型, 默认是一个空的对象 ref='bbb'
+        // 2.$refs只访问对应的组件，用的较多。
+        // $refs => 对象类型, 默认是一个空的对象 ref='bbb'
+        // 
         console.log(this.$refs.aaa.name);
       }
     },

@@ -44,11 +44,11 @@
             template: '#ccpn',
             methods: {
               btnClick() {
-                // 1.访问父组件$parent
+                // 1.访问父组件$parent，考虑到复用性，耦合度太高，一般不用。
                 // console.log(this.$parent);
                 // console.log(this.$parent.name);
 
-                // 2.访问根组件$root
+                // 2.访问根组件$root，一般vue实例中的内容比较少，所以用的也少。
                 console.log(this.$root);
                 console.log(this.$root.message);
               }
