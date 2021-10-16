@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作用域插槽</title>
+</head>
+<div id="app">
+  <cpn>
+    <!-- 2. 用slot-scope绑定插槽对象slotProps(随便定义一个名字) -->
+    <template slot-scope="slotProps">
+      <ul>
+        <!-- 3.访问组件里的数据slotProps.data -->
+        <li v-for="item in slotProps.data">{{item}}</li>
+      </ul>
+    </template>
+  </cpn>
+  <cpn>
+    <template slot-scope="slotProps">
+      <h2>{{slotProps.data.join('-')}}</h2>
+    </template>
+  </cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <!-- 1. 用data绑定数据languages -->
+    <slot :data="languages"></slot>
+  </div>
+</template>
+
+<script src="./js/vue.js"></script>
+<script>
+  const cpn = Vue.extend({
+    template: '#cpn',
+    data() {
+    	return {
+    		languages: ['Java', 'Python', 'JavaScript', 'TypeScript', 'C++', 'OC']
+      }
+    }
+  })
+
+  const app = new Vue({
+    el: '#app',
+    components: {
+    	cpn
+    }
+  })
+</script>
+
+</body>
+</html>
