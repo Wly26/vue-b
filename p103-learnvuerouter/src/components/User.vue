@@ -13,6 +13,8 @@
     name: "User",
     computed: {
       userId() {
+        // route当前活跃的路由
+        // params指参数
         return this.$route.params.id
       }
     },

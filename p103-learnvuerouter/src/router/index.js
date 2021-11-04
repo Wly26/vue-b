@@ -77,10 +77,12 @@ const router = new VueRouter({
   routes,
   // 默认模式是哈希值（hash)，这里改为H5中的history模式
   mode: 'history',
+  // 修改默认样式名
   linkActiveClass: 'active'
 })
 
 // 前置守卫(guard)
+// 跳转前，执行
 router.beforeEach((to, from, next) => {
   // 从from跳转到to
   document.title = to.matched[0].meta.title
@@ -90,6 +92,7 @@ router.beforeEach((to, from, next) => {
 })
 
 // 后置钩子(hook)
+// 跳转后，执行
 router.afterEach((to, from) => {
   // console.log('----');
 })

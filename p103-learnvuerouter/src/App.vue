@@ -10,7 +10,7 @@
 
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
-    <!--<router-link :to="'/user/'+userId">用户</router-link>-->
+    <router-link :to="'/user/'+userId">用户</router-link>
     <!--&lt;!&ndash;<router-link to="/profile">档案</router-link>&ndash;&gt;-->
     <!--<router-link :to="{path: '/profile', query: {name: 'why', age: 18, height: 1.88}}">-->
       <!--档案</router-link>-->
