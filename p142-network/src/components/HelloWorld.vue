@@ -30,50 +30,61 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
   mounted() {
-    axios({
-      url: '/api',
-      method: 'get',
-      params: {
-        city: this.ancity[this.ancityindex].value,
-        str: this.housing
-      }
-    }).then(res => {
-      this.housinglists = res.data.data
-      console.log(this.housinglists.length);
-      console.log(this.housinglists);
-    }).catch(err => {
-      console.log(err);
-    }),
+  //   get请求
+  //   axios({
+  //     url: '/api',
+  //     method: 'get',
+  //     params: {
+  //       city: this.ancity[this.ancityindex].value,
+  //       str: this.housing
+  //     }
+  //   }).then(res => {
+  //     this.housinglists = res.data.data
+  //     console.log(this.housinglists.length);
+  //     console.log(this.housinglists);
+  //   }).catch(err => {
+  //     console.log(err);
+  //   }),
 
-    axios({
-      method:'post',
-      url:'/form',
-      data: {
-        chengshi:this.form.cityname,
-        mianji:this.form.area,
-        louceng:this.form.floor,
-        loucengZong:this.form.floorn,
-        fenqu:this.form.quwei,
-        leixingZong:this.form.housingtypes
-      }
-    }).then(res=>{
-      console.log('成功'),
-      this.danjia = res.data.data.second.danjia,
-      this.zongjia = res.data.data.second.zongjia
-    }).catch(err=>{
-      console.log('失败')
-    })
-  },
+  //   post请求
+  //   axios({
+  //     method:'post',
+  //     url:'/form',
+  //     data: {
+  //       chengshi:this.form.cityname,
+  //       mianji:this.form.area,
+  //       louceng:this.form.floor,
+  //       loucengZong:this.form.floorn,
+  //       fenqu:this.form.quwei,
+  //       leixingZong:this.form.housingtypes
+  //     }
+  //   }).then(res=>{
+  //     console.log('成功'),
+  //     this.danjia = res.data.data.second.danjia,
+  //     this.zongjia = res.data.data.second.zongjia
+  //   }).catch(err=>{
+  //     console.log('失败')
+  //   })
+
+  // axios.all([])
+  //   axios.all([axios({
+  //     url: '/api'
+  //   }),axios({
+  //     url:'/form'
+  //   })]).then(result => {
+  //     console.log(result)
+  //   })
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
