@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise-封装</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+        // //实例化对象
+        // let p = new Promise((resolve, reject) => {
+        //     // resolve('OK');
+        //     // reject("Error");
+        //     // throw "ERROR";
+        //     setTimeout(() => {
+        //         resolve('OK');
+        //         // reject("error");
+        //     }, 1000);
+        // });
+
+        // // p.then(value => {
+        // //     console.log(value);
+        // // }, reason=>{
+        // //     console.warn(reason);
+        // // });
+        // // p.then(value => {
+        // //     alert(value);
+        // // }, reason=>{
+        // //     alert(reason);
+        // // });
+        // console.log(p);
+
+
+        // //执行 then 方法
+        // const res = p.then(value => {
+        //     //抛出异常
+        //     throw "FAIL";
+        // }, reason=>{
+        //     console.warn(reason);
+        // });
+        // console.log(res);
+
+        // let p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('OK');
+        //     });
+        // });
+        // let p2 = Promise.reject('Success');
+        // let p3 = Promise.resolve('Oh Yeah');
+
+        // //调用 race 方法
+        // let result = Promise.race([p1, p2, p3]);
+        
+        // console.log(result);
+
+        let p1 = new Promise((resolve, reject) => {
+            reject('OK');
+            console.log(111);
+        });
+
+        p1.then(value => {
+            console.log(222);
+        }, reason => {
+            console.log(444);
+        });
+
+        console.log(333);
+
+    </script>
+</body>
+</html>
